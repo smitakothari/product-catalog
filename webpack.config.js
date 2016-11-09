@@ -1,9 +1,9 @@
 module.exports = {
-//  context: __dirname + "js"	
-// entry: "/js/components/app.js",
+//  context: __dirname + "js",
+// entry: "js/app.js",
   output: {
     filename: "bundle.js",
-    path: __dirname + 'src/main/resources/static/',
+    path: __dirname + 'src/main/resources/static/dist',
   },
 
 

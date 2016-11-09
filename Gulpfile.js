@@ -31,7 +31,7 @@ gulp.task('imagemin', function() {
 });
 
 gulp.task('webpack', function() {
-    return gulp.src(path.join(src,'./*/*.js'),{ base: path.resolve(src)})
+    return gulp.src(path.join(src,'*.js'),{ base: path.resolve(src)})
         .pipe(webpack(require('./webpack.config.js')
         ))
 
@@ -42,7 +42,7 @@ gulp.task('webpack', function() {
 
 gulp.task('default',['webpack'],function(){
 
-    gulp.watch('js/*/*/*.*',function(){
+    gulp.watch('js/*.*',function(){
 
         gulp.run('webpack');
         // gulp.run('jest');

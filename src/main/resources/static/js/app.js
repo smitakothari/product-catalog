@@ -4,8 +4,8 @@ var welcomeText = React.createClass({
     render: function () {
     return (
     <div>
-                        <label>product catalog</label>
-                    </div>
+        product catalog
+    </div>
                     );
     }
     });

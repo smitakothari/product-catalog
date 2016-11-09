@@ -1,12 +1,16 @@
 package com.jlabs.ecomm.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  * Created by sapan on 11/4/2016.
  */
 
-
+@Document(collection = "Product")
 public class Product {
 
+    @Id
     private long productId;
     private String productName;
     private String productType;
@@ -39,5 +43,10 @@ public class Product {
 
     public void setProductType(String productType) {
         this.productType = productType;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("Product:[Id=%s,prodName=%s,prodType=%s]",productId,productName,productType);
     }
 }

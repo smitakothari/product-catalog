@@ -4,10 +4,7 @@ server:
 spring:
   data:
     mongodb:
-      host: ds145667.mlab.com
-      port: 45667
-      uri: mongodb://heroku_zn26j1t7:test123@ds145667.mlab.com:45667/heroku_zn26j1t7
-
+      uri: mongodb://testapp:test123@ds031617.mlab.com:31617/heroku_pq56jgww
     mongo:
       repositories.enabled: true
 

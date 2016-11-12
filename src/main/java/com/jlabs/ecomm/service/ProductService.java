@@ -28,7 +28,7 @@ public class ProductService {
         Product product2 = new Product(24,"product-test","prouct-test-type");
         productList.add(product1);
         productList.add(product2);
-//        productRepository.findAll();
-        return  productList;
+        return productRepository.findAll();
+//        return  productList;
     }
 }

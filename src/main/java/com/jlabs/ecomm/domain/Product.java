@@ -11,22 +11,22 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Product {
 
     @Id
-    private long productId;
+    private Object _id;
     private String productName;
     private String productType;
 
-    public Product(long productId, String productName, String productType) {
-        this.productId = productId;
+    public Product(Object _id, String productName, String productType) {
+        this._id = _id;
         this.productName = productName;
         this.productType = productType;
     }
 
-    public long getProductId() {
-        return productId;
+    public Object get_id() {
+        return _id;
     }
 
-    public void setProductId(long productId) {
-        this.productId = productId;
+    public void set_id(long _id) {
+        this._id = _id;
     }
 
     public String getProductName() {
@@ -47,6 +47,6 @@ public class Product {
 
     @Override
     public String toString(){
-        return String.format("Product:[Id=%s,prodName=%s,prodType=%s]",productId,productName,productType);
+        return String.format("Product:[Id=%s,prodName=%s,prodType=%s]", _id,productName,productType);
     }
 }

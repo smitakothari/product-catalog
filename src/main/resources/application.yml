@@ -2,10 +2,21 @@ server:
    port: 9000
 #
 spring:
+  application:
+    name: product-catalog
   data:
     mongodb:
       uri: mongodb://testapp:test123@ds031617.mlab.com:31617/heroku_pq56jgww
     mongo:
       repositories.enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:8761/eureka
+
+  instance:
+    lease-renewal-interval-in-seconds: 5
+
 
 

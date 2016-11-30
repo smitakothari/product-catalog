@@ -1,12 +1,12 @@
 package com.jlabs.ecomm.domain;
 
-import static sun.plugin.javascript.navig.JSType.Document;
+import org.springframework.data.annotation.Id;
 
 /**
  * Created by sjain on 11/14/2016.
  */
 
-@Document(collection = "Offers")
+@org.springframework.data.mongodb.core.mapping.Document(collection = "Offers")
 public class Offers {
 
     @Id

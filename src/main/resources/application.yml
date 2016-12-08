@@ -1,6 +1,9 @@
 server:
    port: 9000
-#
+
+info:
+  component: Prod-catalog
+
 spring:
   application:
     name: product-catalog
@@ -13,8 +16,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone:  http://localhost:8761/eureka
-
+      defaultZone:  https://eureka-service.herokuapp.com/eureka
   instance:
     lease-renewal-interval-in-seconds: 5
 

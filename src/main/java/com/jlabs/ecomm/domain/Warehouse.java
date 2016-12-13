@@ -1,18 +1,22 @@
 package com.jlabs.ecomm.domain;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 /**
  * Created by smita on 12/13/16.
  */
+@Document(collection = "Warehouse")
 public class Warehouse {
 
-    public Warehouse(String id, String customerName, String warehouseNumber) {
-        this.id = id;
+    public Warehouse(Object _id, String customerName, String warehouseNumber) {
+        this._id = _id;
         this.customerName = customerName;
         this.warehouseNumber = warehouseNumber;
     }
 
-    public String getId() {
-        return id;
+    public Object getId() {
+        return _id;
     }
 
     public String getCustomerName() {
@@ -23,10 +27,11 @@ public class Warehouse {
         return warehouseNumber;
     }
 
-    private String id;
+    @Id
+    private Object _id;
 
-    public void setId(String id) {
-        id = id;
+    public void setId(Object _id) {
+        _id = _id;
     }
 
     public void setCustomerName(String customerName) {
@@ -39,5 +44,10 @@ public class Warehouse {
 
     private String customerName;
     private String warehouseNumber;
+
+    @Override
+    public String toString(){
+        return String.format("Warehouse:[Id=%s,customerName=%s,warehouseNumber=%s]", _id,customerName,warehouseNumber);
+    }
 
 }

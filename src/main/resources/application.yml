@@ -20,5 +20,10 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 5
 
+endpoints:
+    info:
+     enabled:
+      true
+
 
 

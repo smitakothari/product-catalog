@@ -3,20 +3,33 @@ package com.jlabs.ecomm.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.annotation.Generated;
+
 /**
  * Created by smita on 12/13/16.
  */
 @Document(collection = "Warehouse")
 public class Warehouse {
 
-    public Warehouse(Object _id, String customerName, String warehouseNumber) {
+    @Id
+    private String _id;
+
+    private String customerName;
+    private String warehouseNumber;
+
+
+    public Warehouse(String _id, String customerName, String warehouseNumber) {
         this._id = _id;
         this.customerName = customerName;
         this.warehouseNumber = warehouseNumber;
     }
 
-    public Object getId() {
+    public String get_id() {
         return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getCustomerName() {
@@ -27,8 +40,7 @@ public class Warehouse {
         return warehouseNumber;
     }
 
-    @Id
-    private Object _id;
+
 
     public void setId(Object _id) {
         _id = _id;
@@ -42,8 +54,6 @@ public class Warehouse {
         this.warehouseNumber = warehouseNumber;
     }
 
-    private String customerName;
-    private String warehouseNumber;
 
     @Override
     public String toString(){

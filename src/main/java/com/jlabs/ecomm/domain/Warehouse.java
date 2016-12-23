@@ -3,7 +3,7 @@ package com.jlabs.ecomm.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.annotation.Generated;
+import java.util.Date;
 
 /**
  * Created by smita on 12/13/16.
@@ -16,12 +16,14 @@ public class Warehouse {
 
     private String customerName;
     private String warehouseNumber;
+    private String date;
 
 
-    public Warehouse(String _id, String customerName, String warehouseNumber) {
+    public Warehouse(String customerName, String warehouseNumber, String date) {
         this._id = _id;
         this.customerName = customerName;
         this.warehouseNumber = warehouseNumber;
+        this.date = date;
     }
 
     public String get_id() {
@@ -36,28 +38,29 @@ public class Warehouse {
         return customerName;
     }
 
-    public String getWarehouseNumber() {
-        return warehouseNumber;
-    }
-
-
-
-    public void setId(Object _id) {
-        _id = _id;
-    }
-
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
+    }
+
+    public String getWarehouseNumber() {
+        return warehouseNumber;
     }
 
     public void setWarehouseNumber(String warehouseNumber) {
         this.warehouseNumber = warehouseNumber;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     @Override
     public String toString(){
-        return String.format("Warehouse:[Id=%s,customerName=%s,warehouseNumber=%s]", _id,customerName,warehouseNumber);
+        return String.format("Warehouse:[Id=%s,customerName=%s,warehouseNumber=%s,date=%s]", _id,customerName,warehouseNumber,date);
     }
 
 }

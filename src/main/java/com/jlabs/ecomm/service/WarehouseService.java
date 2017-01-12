@@ -23,6 +23,7 @@ public class WarehouseService {
     @Inject
     private WarehouseRepository warehouseRepository;
 
+
     public List<Warehouse> getAllWarehouse(){
 
         List<Warehouse> warehouseList = new ArrayList<>();
@@ -34,8 +35,34 @@ public class WarehouseService {
 //       return  warehouseList;
     }
 
-    public Warehouse getByWareHosueName(String wareHouseNumber){
-        return warehouseRepository.findByWarehouseNumber(wareHouseNumber);
+    public List<Warehouse> getByWareHouseNumber(String wareHouseNumber){
+        List<Warehouse> warehouseList = new ArrayList<>();
+        warehouseList.add(warehouseRepository.findByWarehouseNumber(wareHouseNumber));
+        return warehouseList;
+    }
+
+    public List<Warehouse> getByCustomerName(String customerName){
+        List<Warehouse> warehouseList = new ArrayList<>();
+        warehouseList.add(warehouseRepository.findByCustomerName(customerName));
+        return warehouseList;
+    }
+
+    public List<Warehouse> getByDate(String date){
+        List<Warehouse> warehouseList = new ArrayList<>();
+        warehouseList.add(warehouseRepository.findByDate(date));
+        return warehouseList;
+    }
+
+public List<Warehouse> getByDateAndWarehouseNumber(String date){
+        List<Warehouse> warehouseList = new ArrayList<>();
+        warehouseList.add(warehouseRepository.findByDate(date));
+        return warehouseList;
+    }
+
+public List<Warehouse> getByWarehouseNumberOrCustomerNameOrDate(String warehouseNumber,String customerName,String date){
+        List<Warehouse> warehouseList = new ArrayList<>();
+        warehouseList.add(warehouseRepository.findByWarehouseNumberOrCustomerNameOrDate(warehouseNumber,customerName,date));
+        return warehouseList;
     }
 
     public Warehouse addDetails(String warehouseData) {

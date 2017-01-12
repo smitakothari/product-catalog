@@ -9,5 +9,10 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface WarehouseRepository extends MongoRepository<Warehouse,String> {
 
     public Warehouse findByWarehouseNumber(String warehouseNumber);
+    public Warehouse findByCustomerName(String customerName);
+    public Warehouse findByDate(String date);
+//    public Warehouse findByWarehouseNumberandDate(String warehouseNumber,String date);
+    public Warehouse findByWarehouseNumberOrCustomerNameOrDate(String warehouseNumber,String customerName,String date);
+
 
 }
